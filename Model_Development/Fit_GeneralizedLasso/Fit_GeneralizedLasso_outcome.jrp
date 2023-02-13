@@ -1,0 +1,200 @@
+﻿Formula Depot(
+	Predictor(
+		Table( "final-2022-11-18" ),
+		Creator( "Fit Generalized" ),
+		Target( "itype1" ),
+		Command( "Publish Prediction Formula" ),
+		Formula(
+			New Column(
+				"Probability( itype1=Control ),!Probability( itype1=Control )",
+				"Numeric",
+				Formula(
+					Logist(
+						138.906662284563 + -0.0374840613777587 *
+						:original_firstorder_minimum_fc + 30.0851204984573 *
+						:original_glszm_smallareaemphasis_fc + -5.16886931938608 *
+						:original_shape_elongation_lm + -22.6027937197107 *
+						:original_shape_sphericity_mm + -183.241411245849 * :v455_fc
+						 + -31.2864884900061 * :v620_fc + 13.0929184029347 *
+						:v810_mm + -0.0449150326270933 *
+						:wavelethhh_firstorder_minimum_fc + -80.5541121951956 *
+						:wavelethhh_glcm_clustershade_mm + -175.513292031235 *
+						:wavelethhh_glcm_imc1_lm + 14.1388520672465 *
+						:wavelethhh_glrlm_runvariance_mm + -0.0000000065806757192 *
+						:wavelethhh_glszm_largeareahighgr_fc + 8.44401662768123 *
+						:wavelethhl_firstorder_mean_mm + -2.50698631344467 *
+						:wavelethhl_glcm_clusterprominenc_fc + -70.4834404869617 *
+						:wavelethhl_glcm_correlation_mm + 135.159288730406 *
+						:wavelethhl_glcm_imc1_mm + 68.3596341150643 *
+						:wavelethhl_glcm_imc1_tc + -580.872797304735 *
+						:wavelethhl_gldm_smalldependencel_fc + -634.382491552537 *
+						:wavelethhl_gldm_smalldependencel_mm + -0.0725533381359363
+						 * :wavelethhl_glrlm_longrunhighgray_mm + 7.05678012366991
+						 * :wavelethhl_glszm_graylevelvarian_mm
+						+0.0000034063862657645 *
+						:wavelethhl_glszm_largearealowgra_fc + -23.7451543847941 *
+						:wavelethhl_glszm_smallareaemphas_fc + -2.46711982513115 *
+						:wavelethlh_firstorder_median_lm + 0.000000052516315218 *
+						:wavelethlh_glszm_largeareahighgr_tc + -1.61594579730143 *
+						:wavelethlh_glszm_zoneentropy_tc + -0.315597348534774 *
+						:wavelethll_firstorder_kurtosis_mm + 2.72362187343286 *
+						:wavelethll_firstorder_skewness_lm + -0.00363176200000953 *
+						:wavelethll_glszm_graylevelnonuni_fc +
+						-0.0000108750618386455 *
+						:wavelethll_glszm_largearealowgra_lm + -34.6049578360473 *
+						:wavelethll_glszm_smallareaemphas_fc + -0.00622267395786139
+						 * :wavelethll_ngtdm_busyness_mm + 0.0125102964039785 *
+						:waveletlhh_firstorder_maximum_mm + -1.63901757644153 *
+						:waveletlhh_firstorder_median_lm + -5.4573283165394 *
+						:waveletlhh_glszm_smallareaemphas_mm + -0.00913208687306463
+						 * :waveletlhl_firstorder_minimum_tc + 3.82470924731225 *
+						:waveletlhl_firstorder_skewness_fc + -2.44052577290932 *
+						:waveletlhl_firstorder_skewness_tc + -0.271269630988434 *
+						:waveletlhl_glcm_clustershade_fc + -2.22075325292815 *
+						:waveletlhl_glszm_zoneentropy_lm + -1.73129068376673 *
+						:waveletlhl_glszm_zoneentropy_mm + -0.0049465095877357 *
+						:waveletllh_firstorder_minimum_fc + -22.7839150149442 *
+						:waveletllh_glcm_correlation_mm + -49.4931066442566 *
+						:waveletllh_glcm_imc1_mm + 508.07815254672 *
+						:waveletllh_gldm_smalldependencel_mm + -4.27054091625983 *
+						:waveletllh_glszm_zoneentropy_fc + 0.00258323341544075 *
+						:waveletlll_glcm_clustershade_lm + -66.2396707106205 *
+						:waveletlll_glcm_idn_fc + 0.0000154180694582632 *
+						:waveletlll_gldm_largedependenceh_lm + 0.00278500701223195
+						 * :waveletlll_glszm_graylevelnonuni_fc + 0.12855055853742
+						 * :waveletlll_glszm_graylevelvarian_mm + -0.237040444584005
+						 * :waveletlll_ngtdm_busyness_tc
+					)
+				),
+				Set Property(
+					"Response Probability",
+					{:itype1, "Control", Creator( "Fit Generalized" ),
+					Model Name( "Lasso" ), ID( 1620592599 ),
+					Validation( :验证 试验920 折4 )}
+				)
+			);
+			New Column( "Probability( itype1=Case ),!Probability( itype1=Case )",
+				"Numeric",
+				Formula(
+					1 + -1 * Logist(
+						138.906662284563 + -0.0374840613777587 *
+						:original_firstorder_minimum_fc + 30.0851204984573 *
+						:original_glszm_smallareaemphasis_fc + -5.16886931938608 *
+						:original_shape_elongation_lm + -22.6027937197107 *
+						:original_shape_sphericity_mm + -183.241411245849 * :v455_fc
+						 + -31.2864884900061 * :v620_fc + 13.0929184029347 *
+						:v810_mm + -0.0449150326270933 *
+						:wavelethhh_firstorder_minimum_fc + -80.5541121951956 *
+						:wavelethhh_glcm_clustershade_mm + -175.513292031235 *
+						:wavelethhh_glcm_imc1_lm + 14.1388520672465 *
+						:wavelethhh_glrlm_runvariance_mm + -0.0000000065806757192 *
+						:wavelethhh_glszm_largeareahighgr_fc + 8.44401662768123 *
+						:wavelethhl_firstorder_mean_mm + -2.50698631344467 *
+						:wavelethhl_glcm_clusterprominenc_fc + -70.4834404869617 *
+						:wavelethhl_glcm_correlation_mm + 135.159288730406 *
+						:wavelethhl_glcm_imc1_mm + 68.3596341150643 *
+						:wavelethhl_glcm_imc1_tc + -580.872797304735 *
+						:wavelethhl_gldm_smalldependencel_fc + -634.382491552537 *
+						:wavelethhl_gldm_smalldependencel_mm + -0.0725533381359363
+						 * :wavelethhl_glrlm_longrunhighgray_mm + 7.05678012366991
+						 * :wavelethhl_glszm_graylevelvarian_mm
+						+0.0000034063862657645 *
+						:wavelethhl_glszm_largearealowgra_fc + -23.7451543847941 *
+						:wavelethhl_glszm_smallareaemphas_fc + -2.46711982513115 *
+						:wavelethlh_firstorder_median_lm + 0.000000052516315218 *
+						:wavelethlh_glszm_largeareahighgr_tc + -1.61594579730143 *
+						:wavelethlh_glszm_zoneentropy_tc + -0.315597348534774 *
+						:wavelethll_firstorder_kurtosis_mm + 2.72362187343286 *
+						:wavelethll_firstorder_skewness_lm + -0.00363176200000953 *
+						:wavelethll_glszm_graylevelnonuni_fc +
+						-0.0000108750618386455 *
+						:wavelethll_glszm_largearealowgra_lm + -34.6049578360473 *
+						:wavelethll_glszm_smallareaemphas_fc + -0.00622267395786139
+						 * :wavelethll_ngtdm_busyness_mm + 0.0125102964039785 *
+						:waveletlhh_firstorder_maximum_mm + -1.63901757644153 *
+						:waveletlhh_firstorder_median_lm + -5.4573283165394 *
+						:waveletlhh_glszm_smallareaemphas_mm + -0.00913208687306463
+						 * :waveletlhl_firstorder_minimum_tc + 3.82470924731225 *
+						:waveletlhl_firstorder_skewness_fc + -2.44052577290932 *
+						:waveletlhl_firstorder_skewness_tc + -0.271269630988434 *
+						:waveletlhl_glcm_clustershade_fc + -2.22075325292815 *
+						:waveletlhl_glszm_zoneentropy_lm + -1.73129068376673 *
+						:waveletlhl_glszm_zoneentropy_mm + -0.0049465095877357 *
+						:waveletllh_firstorder_minimum_fc + -22.7839150149442 *
+						:waveletllh_glcm_correlation_mm + -49.4931066442566 *
+						:waveletllh_glcm_imc1_mm + 508.07815254672 *
+						:waveletllh_gldm_smalldependencel_mm + -4.27054091625983 *
+						:waveletllh_glszm_zoneentropy_fc + 0.00258323341544075 *
+						:waveletlll_glcm_clustershade_lm + -66.2396707106205 *
+						:waveletlll_glcm_idn_fc + 0.0000154180694582632 *
+						:waveletlll_gldm_largedependenceh_lm + 0.00278500701223195
+						 * :waveletlll_glszm_graylevelnonuni_fc + 0.12855055853742
+						 * :waveletlll_glszm_graylevelvarian_mm + -0.237040444584005
+						 * :waveletlll_ngtdm_busyness_tc
+					)
+				),
+				Set Property(
+					"Response Probability",
+					{:itype1, "Case", Creator( "Fit Generalized" ),
+					Model Name( "Lasso" ), ID( 1620592599 ),
+					Validation( :验证 试验920 折4 )}
+				)
+			);
+			New Column( "Most Likely itype1,!Most Likely itype1",
+				"Character",
+				"Nominal",
+				Formula(
+					IfMax(
+						:"Probability( itype1=Control )"n,
+						"Control",
+						:"Probability( itype1=Case )"n,
+						"Case",
+						""
+					)
+				)
+			);
+		),
+		Inputs(
+			{"original_firstorder_minimum_fc"(1),
+			"original_glszm_smallareaemphasis_fc"(1), "original_shape_elongation_lm"
+			(1), "original_shape_sphericity_mm"(1), "v455_fc"(1), "v620_fc"(1),
+			"v810_mm"(1), "wavelethhh_firstorder_minimum_fc"(1),
+			"wavelethhh_glcm_clustershade_mm"(1), "wavelethhh_glcm_imc1_lm"(1),
+			"wavelethhh_glrlm_runvariance_mm"(1),
+			"wavelethhh_glszm_largeareahighgr_fc"(1),
+			"wavelethhl_firstorder_mean_mm"(1),
+			"wavelethhl_glcm_clusterprominenc_fc"(1),
+			"wavelethhl_glcm_correlation_mm"(1), "wavelethhl_glcm_imc1_mm"(1),
+			"wavelethhl_glcm_imc1_tc"(1), "wavelethhl_gldm_smalldependencel_fc"(1),
+			"wavelethhl_gldm_smalldependencel_mm"(1),
+			"wavelethhl_glrlm_longrunhighgray_mm"(1),
+			"wavelethhl_glszm_graylevelvarian_mm"(1),
+			"wavelethhl_glszm_largearealowgra_fc"(1),
+			"wavelethhl_glszm_smallareaemphas_fc"(1),
+			"wavelethlh_firstorder_median_lm"(1),
+			"wavelethlh_glszm_largeareahighgr_tc"(1),
+			"wavelethlh_glszm_zoneentropy_tc"(1),
+			"wavelethll_firstorder_kurtosis_mm"(1),
+			"wavelethll_firstorder_skewness_lm"(1),
+			"wavelethll_glszm_graylevelnonuni_fc"(1),
+			"wavelethll_glszm_largearealowgra_lm"(1),
+			"wavelethll_glszm_smallareaemphas_fc"(1), "wavelethll_ngtdm_busyness_mm"
+			(1), "waveletlhh_firstorder_maximum_mm"(1),
+			"waveletlhh_firstorder_median_lm"(1),
+			"waveletlhh_glszm_smallareaemphas_mm"(1),
+			"waveletlhl_firstorder_minimum_tc"(1),
+			"waveletlhl_firstorder_skewness_fc"(1),
+			"waveletlhl_firstorder_skewness_tc"(1),
+			"waveletlhl_glcm_clustershade_fc"(1), "waveletlhl_glszm_zoneentropy_lm"(
+			1), "waveletlhl_glszm_zoneentropy_mm"(1),
+			"waveletllh_firstorder_minimum_fc"(1), "waveletllh_glcm_correlation_mm"(
+			1), "waveletllh_glcm_imc1_mm"(1), "waveletllh_gldm_smalldependencel_mm"(
+			1), "waveletllh_glszm_zoneentropy_fc"(1),
+			"waveletlll_glcm_clustershade_lm"(1), "waveletlll_glcm_idn_fc"(1),
+			"waveletlll_gldm_largedependenceh_lm"(1),
+			"waveletlll_glszm_graylevelnonuni_fc"(1),
+			"waveletlll_glszm_graylevelvarian_mm"(1), "waveletlll_ngtdm_busyness_tc"
+			(1)}
+		)
+	)
+)
