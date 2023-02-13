@@ -11,6 +11,7 @@ Focus of the current work
 Due to its slow progression and irreversible structural changes, early intervention is crucial for osteoarthritis, which has no disease-modifying treatment. According to estimates, OA will become one of the most prevalent diseases in populations in high-income countries, and the medical costs associated with it will account for between 1% and 2.5% of the gross domestic product of these countries by the end of this century. To this end, we developed the first pre-radiographic multi-structure radiomic model (MS-RM) in the Osteoarthritis Initiative cohort. MS-RM integrates meniscus and femorotibial cartilage radiomic features and accurately predicts radiographic KOA using a neural network.
 
 Requirements
+
 JMP pro 16
 
 How to predict the future state of a knee
