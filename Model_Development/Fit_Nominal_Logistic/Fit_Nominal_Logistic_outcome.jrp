@@ -1,0 +1,78 @@
+﻿Formula Depot(
+	Predictor(
+		Table( "final-2022-11-18" ),
+		Creator( "Fit Nominal Logistic" ),
+		Target( "itype1" ),
+		Command( "Publish Probability Formulas" ),
+		Formula(
+			New Column( "Lin[Control]_1",
+				"Numeric",
+				Formula(
+					67.8225584206322 + 17.9139066181218 * :v810_mm +
+					-44.4484024147687 * :wavelethhl_glcm_correlation_mm
+					+37.1611631286306 * :wavelethhl_glcm_imc1_tc + -543.08691361572
+					 * :wavelethhl_gldm_smalldependencel_mm + -0.0605076619251482 *
+					:wavelethhl_glrlm_longrunhighgray_mm + 4.23079348309421 *
+					:wavelethhl_glszm_graylevelvarian_mm + -17.427377971716 *
+					:wavelethhl_glszm_smallareaemphas_fc + -3.3401829838497 *
+					:wavelethlh_firstorder_median_lm + 0.0000000600668512722 *
+					:wavelethlh_glszm_largeareahighgr_tc + -1.00398340579847 *
+					:wavelethlh_glszm_zoneentropy_tc + 1.25412905444842 *
+					:wavelethll_firstorder_skewness_lm + -1.35301244832444 *
+					:waveletlhh_firstorder_median_lm + -2.49611308125717 *
+					:waveletlhl_firstorder_skewness_tc + -1.29104858312071 *
+					:waveletlhl_glszm_zoneentropy_lm + 0.00279307501761915 *
+					:waveletlll_glcm_clustershade_lm + -59.8246992075537 *
+					:waveletlll_glcm_idn_fc
+				),
+				Set Property( "Intermediate", 1 )
+			);
+			New Column( "Prob[Control],!Prob[Control]",
+				"Numeric",
+				Formula( 1 / (1 + Exp( -:"Lin[Control]_1"n )) ),
+				Set Property(
+					"Response Probability",
+					{:itype1, "Control", Creator( "Fit Nominal Logistic" ),
+					ID( 1998614773 ), Validation( :验证 试验920 折4 )}
+				)
+			);
+			New Column( "Prob[Case],!Prob[Case]",
+				"Numeric",
+				Formula( 1 / (1 + Exp( :"Lin[Control]_1"n )) ),
+				Set Property(
+					"Response Probability",
+					{:itype1, "Case", Creator( "Fit Nominal Logistic" ),
+					ID( 1998614773 ), Validation( :验证 试验920 折4 )}
+				)
+			);
+			New Column( "Most Likely itype1,!Most Likely itype1",
+				"Character",
+				"Nominal",
+				Formula(
+					IfMax(
+						:"Prob[Control]"n,
+						"Control",
+						:"Prob[Case]"n,
+						"Case",
+						""
+					)
+				)
+			);
+		),
+		Inputs(
+			{"v810_mm"(1), "wavelethhl_glcm_correlation_mm"(1),
+			"wavelethhl_glcm_imc1_tc"(1), "wavelethhl_gldm_smalldependencel_mm"(1),
+			"wavelethhl_glrlm_longrunhighgray_mm"(1),
+			"wavelethhl_glszm_graylevelvarian_mm"(1),
+			"wavelethhl_glszm_smallareaemphas_fc"(1),
+			"wavelethlh_firstorder_median_lm"(1),
+			"wavelethlh_glszm_largeareahighgr_tc"(1),
+			"wavelethlh_glszm_zoneentropy_tc"(1),
+			"wavelethll_firstorder_skewness_lm"(1),
+			"waveletlhh_firstorder_median_lm"(1),
+			"waveletlhl_firstorder_skewness_tc"(1),
+			"waveletlhl_glszm_zoneentropy_lm"(1), "waveletlll_glcm_clustershade_lm"(
+			1), "waveletlll_glcm_idn_fc"(1)}
+		)
+	)
+)
