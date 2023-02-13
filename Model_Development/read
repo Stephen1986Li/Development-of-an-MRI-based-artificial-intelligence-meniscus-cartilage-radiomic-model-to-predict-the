@@ -1,0 +1,9 @@
+This is the multi-structure radiomic model (MS-RM) model development code on JMP pro 16 platform.
+
+The model development code contains different machine-learning algorithm, including: Boosted_Tree, Bootstrap_Forest, Discriminant, Fit_GeneralizedLasso, 
+Fit_Nominal_Logistic, K_Nearest_Neighbors, Naive_Bayes, Neural_Network, Nominal_Logistic_Fit,  and Support_Vector_Machines. 
+
+Each machine-learning algorithm was created using C, python, JAVAscript, SAS, and SQL code.
+
+Finally, we use Neural_Network algorithm to develop our radiographic knee osteoarthritis predictive model. 
+Because the neural network was at the Pareto frontier and the optimal algorithm in our research.
